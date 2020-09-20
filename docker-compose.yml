@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  mackerel-agent:
+    image: mackerel/mackerel-agent
+    hostname: hackintosh
+    restart: always
+    env_file: .env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./mackerel-agent/:/var/lib/mackerel-agent/
